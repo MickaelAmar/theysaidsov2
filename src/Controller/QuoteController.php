@@ -27,7 +27,7 @@ class QuoteController extends AbstractController
     }
 
     /**
-     * @Route("/shout/{author_slug}", methods="GET")
+     * @Route("/shout/{author_slug}", methods="GET", name="app_get_quotes")
      * @param string $author_slug
      * @param Request $request
      * @param CacheInterface $cache

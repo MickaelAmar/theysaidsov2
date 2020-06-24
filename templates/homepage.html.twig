@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}theysaidso - Homepage{% endblock %}
+
+{% block body %}
+    <div>
+        <h3>Hello and welcome Mickael Amar's theysaidso super (simple&small) API</h3>
+        <p>To test it, simply reach this endpoint through your web browser or an API client (eg Postman) : <br/>
+            <a target="_blank" href="{{ path('app_get_quotes', { author_slug: 'steve-jobs' }) }}">{{ path('app_get_quotes', { author_slug: 'steve-jobs' }) }}</a>
+        </p>
+        <p>
+            or execute this CURL call : <br/>
+            curl -s https://radiant-springs-24734.herokuapp.com/shout/steve-jobs?limit=2</p>
+    </div>
+
+{% endblock %}
