@@ -6,16 +6,10 @@ use App\Entity\Quote;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\CacheInterface;
-
-/*
-TODO :
-- Add tests
-- BONUS : Set up a live documentation/test page (Swagger ?)
-- BONUS : Make a seeder script to populate a db table with quote references and manipulate it from an entity/model
-*/
 
 class QuoteController extends AbstractController
 {
@@ -31,7 +25,7 @@ class QuoteController extends AbstractController
      * @param string $author_slug
      * @param Request $request
      * @param CacheInterface $cache
-     * @return JsonResponse
+     * @return JsonResponse|Response
      * @throws \Psr\Cache\InvalidArgumentException
      */
     public function shout(string $author_slug, Request $request, CacheInterface $cache)
@@ -51,7 +45,9 @@ class QuoteController extends AbstractController
             });
 
             // Json response
-            return $this->json($shouted_quotes);
+            $response = new Response(json_encode($shouted_quotes));
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
 
         } catch (\Exception $exception) {
 
