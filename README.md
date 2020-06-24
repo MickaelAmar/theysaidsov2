@@ -8,9 +8,10 @@ Access to the API : https://radiant-springs-24734.herokuapp.com/
 Of course there is still a lot of room for improvement here, such as :
 - Set up a live documentation/client test page (with Swagger ?)
 - Make a seeder script to populate a db table with quote references and manipulate it as an entity/model
+- Take more advantage of Symfony's validation feature
 - Add more precise test cases
 
-Feedbacks are more than welcomed as I'm not entirely familiar with the Symfony ecosystem and I easily can imagine better practices could be done compared to my implementation.
+Feedbacks are also more than welcome as I'm not entirely familiar with the Symfony ecosystem and I can easily imagine I didn't always apply the best practices and could miss some points during my implementation.
 
 ##### What to review ?
 If you are not familiar with Symfony's file organization or to simply make your review easier, here is a list of the major files edited for this project :
