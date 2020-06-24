@@ -13,8 +13,7 @@ Of course there is still a lot of room for improvement here, such as :
 Feedbacks are more than welcomed as I'm not entirely familiar with the Symfony ecosystem and I easily can imagine better practices could be done compared to my implementation.
 
 ##### What to review ?
-If you are not familiar with Symfony file organization, here is a list of the major files edited for this project :
-
+If you are not familiar with Symfony file organization or to simply make your review easier, here is a list of the major files edited for this project :
 
 - **src/Controller/QuoteController.php** : the route's action
 - **src/Entity/Quote.php** : fetching and manipulating the resources
